@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="keywords" content="lightweight, zoom, plugin, written, in, es5, vanilla, js">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="./csszoom/style.css?v=1" type="text/css">
+
+    <script type="text/javascript" src=".\SimpleImage.js"></script>
+  
+<style>
+body{
+  
+  font-family: verdana;
+  padding: 5px;
+  text-align:center;
+}
+
+h1{
+  color: Green;/*  darkslategray */
+}
+
+p {
+  font-size: 12pt;
+  color: black;
+}
+canvas {
+  position: absolute;
+  top: 20vh;
+  left: 0px;
+  height: auto;
+  width: 100vw;
+  border-style: solid;
+  border-width: 0px;
+  border-color: transparent;
+}
+
+input {
+  font-family: verdana;
+  font-size: 12pt;
+}
+</style>
+
+<style>
+.btn-group button {
+  background-color: #04AA6D; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+
+
+
+ 
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+
+
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+
+}
+</style>
+
+<style> 
+ 
+#DIV1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height:  100vh;
+  background-color: transparent;
+  border: 0px;
+  z-index: 1;
+  display: none;
+}
+
+#DIV2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 1px solid black;
+  
+  display: none;
+}
+
+
+.button {
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer; 
+  float: left; 
+  z-index: 1000;
+}
+
+.button1 {background-color: #4CAF50;padding: 14px 16px;display: block;} /* Green */
+.button2 {background-color: #008CBA;padding: 14px 16px;display: none;} /* Blue */
+.button3 {background-color: #ff3333;padding: 14px 16px;display: none;} /* red */
+.button4 {background-color: #e67300;padding: 14px 16px;display: none;} /* orange */
+.button-them1 {
+   border: 2px solid gray;
+  color: #ffffff;
+  background-color: #00b300;
+  padding: 8px 8px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;   
+   } 
+.button-them2 {background-color: #e67300;position: absolute;top: 30px;left: 30px;display: none;} 
+
+
+
+</style>
+
+<style>
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  z-index: 1000;
+}
+
+.close-btn-wrapper {
+  position: absolute;
+  overflow: hidden;
+  z-index: 1000;
+  bottom: 0px;
+
+
+}
+
+.btn-close {
+border: 2px solid gray;
+  color: #ffffff;
+  background-color: green;
+  padding: 8px 8px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+   display: none;
+}
+
+.btn-chinhanh {
+border: 2px solid gray;
+  color: #ffffff;
+  background-color: red;
+  padding: 8px 8px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+   display: block;
+    z-index: 1000;
+   
+}
+
+.btn-themvatthe {
+  border: 2px solid gray;
+  color: #ffffff;
+  background-color: green;
+  padding: 8px 8px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  display: none;
+}
+
+.btn-themvatthe2 {
+  border: 2px solid gray;
+  color: #ffffff;
+  background-color: green;
+  padding: 6px 4px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+}
+
+.btn-chonanh {
+  border: 2px solid gray;
+  color: #ffffff;
+  background-color: red;
+  padding: 6px 4px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+</style>
+
+
+</head>
+<body>
+
+
+<div class="upload-btn-wrapper">
+<button id="nutthem1" class="btn-chonanh" onclick="themvao1()">Chọn hình chụp</button>
+<input type="file" multiple="false" accept="image/*" id="finput" onchange="upload()" />
+</div>
+<script src=".\SimpleImage.js">
+</script>
+
+
+<div class="upload-btn-wrapper" >
+    <button  id="chinhhinhchup" class="btn-themvatthe2"  onclick="chinhhinhchup()">Chỉnh hình</button>
+</div>
+<div class="upload-btn-wrapper" >
+<button id="chontranh" class="btn-themvatthe2" onclick="chontranh()">3D</button> 
+</div>
+
+
+<div id="DIV1">
+<div class="container">
+  <div class="zoom">
+    <canvas id= "canv1" ></canvas>
+  </div>
+</div>
+</div>
+
+<div id="DIV2">
+ <iframe src=".\3dnoithat.html" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" scrolling="no" allowfullscreen allowtransparency="true"></iframe>
+</div>
+
+
+
+<script>
+var top_z = document.getElementById("DIV1").style.zIndex;
+
+function themvao1() {
+    document.getElementById("DIV1").style.zIndex = ++top_z;
+  document.getElementById("chinhhinhchup").style.display = "block"; 
+  document.getElementById("DIV1").style.display = "block";
+  document.getElementById("nutthem1").style.display = "block";
+  document.getElementById("chontranh").style.display = "block";
+  
+
+}
+       
+  function chinhhinhchup() { 
+  document.getElementById("DIV1").style.zIndex = ++top_z;
+  document.getElementById("DIV1").style.display = "block";
+  document.getElementById("nutthem1").style.display = "block";
+
+}
+
+function chontranh() {
+ 
+  document.getElementById("DIV2").style.zIndex = ++top_z;
+  document.getElementById("DIV2").style.display = "block";
+ 
+  
+ 
+}
+</script>
+
+
+
+<script type="text/javascript" src="./jszoom/zoom-by-ironex.min.js?v=1"></script>
+<script type="text/javascript">
+  zoom();
+</script>
+<script>
+function upload(){
+  var imgcanvas = document.getElementById("canv1");
+  var fileinput = document.getElementById("finput");
+  var image = new SimpleImage(fileinput);
+  image.drawTo(imgcanvas);
+}
+</script>
+    
+    <script> 
+    window.onload = function chinhhinhchup() {  
+       
+  document.getElementById("DIV1").style.zIndex = ++top_z;
+  document.getElementById("DIV1").style.display = "block";
+  document.getElementById("nutthem1").style.display = "block";
+
+    }; 
+  </script> 
+
+ 
+
+</body>
+</html>

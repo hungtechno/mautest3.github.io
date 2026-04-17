@@ -1,0 +1,66 @@
+.bentrai {
+  font-family: sans-serif;
+  position: relative;
+  left: -100%;
+  top: 0px;
+  border: 3px solid #0000cc;
+  border-radius:1vw 1vw 1vw 1vw;
+  padding: 1px;
+  background-color: #00b300;
+  opacity: 1;
+  color:#ffffff;
+  text-align: center;
+    font-weight: normal;
+   
+}
+
+
+
+.tenview { 
+font-family: sans-serif;
+position: absolute;  
+left: 0; 
+top: 0px;  
+border: 3px solid #ff751a;  
+background-color: #ffffff; 
+border-radius:1vw 1vw 1vw 1vw;
+padding: 3px 10px 3px 10px;
+opacity: 1;
+color:#1a1aff;
+text-align: center;
+    font-weight: normal;
+}
+
+
+.nutmenuphu {
+font-family: sans-serif;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  border: 3px solid #0000cc;
+  border-radius:1vw 1vw 1vw 1vw;
+  padding: 1px;
+  background-color: #ff6600;
+  opacity: 1;
+  color:#ffffff;
+  text-align: center;
+    font-weight: normal;
+}
+
+.back-button {
+    position: relative;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url('./assets/nutdieukhien/1NUT-BACK.png');
+  background-size: 100% 100%;
+ }
+
+.restore-button {
+     position: relative;
+  left: -50%;
+  width: 80px;
+  height: 80px;
+  background-image: url('./assets/nutdieukhien/1NUT-QUAYLAI.png');
+  background-size: 100% 100%;
+ }

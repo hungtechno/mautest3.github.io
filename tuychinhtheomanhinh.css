@@ -1,0 +1,166 @@
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1901px) {
+  
+  /* CSS */
+ 
+ div.nuttat { font-size: 20px; width: 200px;}
+ div.back-button { width: 80px; height: 80px;}
+ div.restore-button { width: 80px; height: 80px;}
+ div.nutmenucon { font-size: 30px; width: 90px;left:-90px;/*height: 70px;*/top:35px;}
+ div.bentrai { font-size: 30px; width: 230px;}
+ div.nutmenuphu { font-size: 30px; width: 230px;}
+ div.hienthongtin_childaudio {  top: 25px;} 
+ div.nuttm { right:55%;font-size: 15px;}
+ div.sidebar { left:45%;top: 25px;} 
+ div.tenview { font-size: 20px;}
+}
+
+/* 
+  ##Device = Desktops laptop
+  ##Screen = 1281px 
+*/
+
+@media (min-width: 1281px) and (max-width: 1900px) {
+  
+  /* CSS */
+ 
+ div.nuttat { font-size: 20px; width: 200px;}
+ div.back-button { width: 60px; height: 60px;}
+ div.restore-button { width: 60px; height: 60px;}
+ div.nutmenucon { font-size: 20px; width: 70px;left:-70px;/*height: 70px;*/top:30px;}
+ div.bentrai { font-size: 20px; width: 180px;}
+ div.nutmenuphu { font-size: 20px; width: 180px;} 
+ div.hienthongtin_childaudio {  top: 25px;}
+ div.nuttm { right:60%;font-size: 15px;}
+ div.sidebar { left:40%;top: 25px;}
+ div.tenview { font-size: 20px;}
+    div.notevitri { font-size: 15px;}
+}
+ 
+
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  /* CSS */
+  
+ div.nuttat { font-size: 20px; width: 200px;}
+ div.back-button { width: 60px; height: 60px;}
+ div.restore-button { width: 60px; height: 60px;}
+ div.nutmenucon { font-size: 18px; width: 70px;left:-70px;/*height: 70px;*/top:20px;}
+ div.bentrai { font-size: 18px; width: 150px;}
+ div.nutmenuphu { font-size: 18px; width: 150px;} 
+ div.hienthongtin_childaudio {  top: 25px;}
+ div.nuttm { right:60%;font-size: 15px;}
+ div.sidebar { left:40%;top: 25px;}
+ div.tenview { font-size: 18px;}
+    div.notevitri { font-size: 15px;}
+}
+ 
+
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px cho ipad may tinh bang
+*/
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+
+  
+ div.nuttat { font-size: 15px; width: 150px;}
+ div.back-button { width: 60px; height: 60px;}
+ div.restore-button { width: 60px; height: 60px;}
+ div.nutmenucon { font-size: 18px; width: 70px;left:-70px;top:20px;}
+ div.bentrai { font-size: 18px; width: 150px;} 
+ div.nutmenuphu { font-size: 18px; width: 150px;} 
+ div.hienthongtin_childaudio {  top: 25px;}
+ div.nuttm { right:60%;font-size: 15px;}
+ div.sidebar { left:40%;top: 25px;} 
+ div.tenview { font-size: 16px;}
+    div.notevitri { font-size: 12px;}
+}
+ 
+
+
+
+  
+
+/* 
+  ##Device = Tablets, Mobiles note 10 (Landscape)
+  ##Screen = B/w 481px to 767px cho dien thoai từ note 10 xuống
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+ 
+ div.nuttat { font-size: 15px; width: 150px;}
+ div.back-button { width: 40px; height: 40px;}
+ div.restore-button { width: 40px; height: 40px;}
+ div.nutmenucon { font-size: 14px; width: 50px;left:-50px;top:18px;} 
+ div.bentrai { font-size: 14px; width: 120px;} 
+ div.nutmenuphu { font-size: 14px; width: 120px;} 
+ div.hienthongtin_childaudio {  top: 5px;}
+ div.nuttm { right:60%;font-size: 15px;}
+ div.sidebar { left:40%;top: 5px;}
+ div.tenview { font-size: 14px;}
+    div.notevitri { font-size: 12px;}
+}
+ 
+
+
+/* 
+  ##Device = Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px từ S8 trở xuống
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  /* CSS */
+ 
+ div.nuttat { font-size: 15px; width: 150px;}
+ div.back-button { width: 40px; height: 40px;}
+ div.restore-button { width: 40px; height: 40px;}
+ div.nutmenucon { font-size: 12px; width: 50px;left:-50px;top:15px;}
+ div.bentrai { font-size: 12px; width: 110px;} 
+ div.nutmenuphu { font-size: 12px; width: 110px;}
+ div.hienthongtin_childaudio {  top: 7px;}
+ div.nuttm { right:60%;font-size: 15px;}
+ div.sidebar { left:40%;top: 7px;}
+ div.tenview { font-size: 12px;} 
+    div.notevitri { font-size: 10px;}
+}
+ 
+
+
+/* 
+  ##Device = Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 220px) and (max-width: 480px) {
+  
+  /* CSS */
+ 
+ div.nuttat { font-size: 15px; width: 150px;}
+ div.back-button { width: 40px; height: 40px;}
+ div.restore-button { width: 40px; height: 40px;}
+ div.nutmenucon { font-size: 12px; width: 50px;left:-50px;/*hight:30px*/top:15px;}
+ div.bentrai { font-size: 12px; width: 110px;} 
+ div.nutmenuphu { font-size: 12px; width: 110px;}
+ div.hienthongtin_childaudio {  top: 10px;}
+ div.nuttm { right:55%;font-size: 15px;height:40px;}
+ div.sidebar { left:45%;top: 10px;}
+ div.tenview { font-size: 12px;}
+    div.notevitri { font-size: 10px;}
+    
+}

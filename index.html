@@ -1,293 +1,143 @@
-<!doctype html>
-<html>
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="description" content="Zoom - lightweight ES5 javascript plugin without any dependencies, compatible with desktop and mobile devices. Supports doubleclick, mousemove, mousewheel, doubletap, touchmove and pinch events.">
-  <meta name="keywords" content="lightweight, zoom, plugin, written, in, es5, vanilla, js">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="./csszoom/style.css?v=1" type="text/css">
-  <title>Zoom by Ironex</title>
-  <style>
-body{
-  
-  font-family: verdana;
-  padding: 5px;
-  text-align:center;
+<!DOCTYPE html><html><head><meta charset="utf-8"><script type="text/javascript" src="./b4w.simple.min.js?v=26122024205707"></script><meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width"><link type="text/css" rel="stylesheet" href="index.min.css?v=26122024205707"><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><style>
+body {
+  background: #555;
 }
 
-h1{
-  color: Green;/*  darkslategray */
+.content {
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+  height:95vh;
 }
 
-p {
-  font-size: 12pt;
-  color: black;
+/* Style cho nút AI Render */
+.ai-render-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,114,255,0.3);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-canvas {
-   
-  height: 100vh;
-  width: auto;
-  border-style: solid;
-  border-width: 1px;
-  border-color: transparent;
+.ai-render-btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,114,255,0.5);
+    background: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%);
 }
-
-input {
-  font-family: verdana;
-  font-size: 12pt;
+.ai-render-btn:active {
+    transform: scale(0.95);
 }
-</style>
-    
-    <style>
-.btn-group button {
-  background-color: #04AA6D; /* Green background */
-  border: 1px solid green; /* Green border */
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
- 
+.ai-render-btn .icon {
+    font-size: 24px;
 }
+</style></head><body><div class="content"><body style="margin:auto;padding:0px;overflow:hidden;"><iframe src="./bosuutap1.html" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:90%;width:100%;" scrolling="no" allowfullscreen></iframe></body></div>
 
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
-}
+<button class="ai-render-btn" onclick="startAiRender()">
+    <span class="icon">✨</span>
+    <span>AI Render Ảnh</span>
+</button>
 
-.btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
-}
+<!-- Trigger/Open The Modal --><div class="hienvideochung" id="hienvideochung"></div><!-- The Modal --><div id="myModal" class="modal1"><!-- Modal content --><div class="modal1-content"><span id="noidung1" class="close1" style="text-align: center;">TẮT-HDSD</span><p id="noidung2" style="text-align: center;">HƯỚNG DẪN SỬ DỤNG</p><div id="player"></div><div><iframe id="clipmodal" src="https://3dshow.online/hdsd/"  style="height:65vh;width:81vw;position: absolute;margin: 0 auto;display: block;" ></iframe></div></div></div><!-- link js play video --><script type="text/javascript" src="index.min.js?v=26122024205707"></script>
 
-/* Add a background color on hover */
-.btn-group button:hover {
-  background-color: #3e8e41;
-}
-        
-
-        
-</style>
-    
-<style> 
- 
-.DIV1e {
-  position: absolute;
-  top: 50px;
-  left: 0px;
-  width: 100%;
-  height: 90vh;  
-  border: 1px solid black;
-  z-index: 1;
-  display: none;
-    pointer-Events: auto;  /*ngan hoat dong khung hinh*/   
-    background:none transparent;
-}
-    
-    .DIV1e1 {
-  position: absolute;
-  top: 50px;
-  left: 0px;
-  width: 100%;
-  height: 90vh;  
-  border: 1px solid black;
-  z-index: 1;
-  display: none;
-    pointer-Events: none;  /*ngan hoat dong khung hinh*/   
-        background:none transparent;
-}
-
-
-
-.button {
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer; 
-  float: left; 
-}
-
-.button1 {background-color: #4CAF50;padding: 14px 16px;display: block;} /* Green */
-.button2 {background-color: #008CBA;padding: 14px 16px;display: none;} /* Blue */
-
-.button-them1 {background-color: #e67300;position: absolute;top: 30px;left: 30px;display: block;} 
-
-.button-close1 {background-color: #e67300;position: absolute;top: 30px;left: 120px;display: none;}
-
-.nutchonchinh {
-  font-family: sans-serif;
-  position: absolute;
-  right:0px;
-    top:0px;
-  border: 3px solid #0000cc;
-  border-radius:1vw 1vw 1vw 1vw;
-  padding: 1px;
-  background-color: #00b300;
-  opacity: 1;
-  color:#ffffff;
-  text-align: center;
-    font-weight: normal;
-    display:none;
-   font-size: 15px; width: 150px;
-   display: block;
-}
-
-</style>
-
-<style>
-
-.upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-}
-
-.btn {
-  border: 2px solid gray;
-  color: #ffffff;
-  background-color: #00b300;
-  padding: 8px 8px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.upload-btn-wrapper input[type=file] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-
-</style>
-
-</head>
-<body>
-
-<div class="upload-btn-wrapper">
-  <button class="btn" >Chọn Ảnh</button>
-  <input type="file" multiple="false" accept="image/*" id="finput" onchange="upload()" />
-</div>
-
- 
-<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js">
-</script>
-
-<div class="upload-btn-wrapper">
-<button id="nutthem1" class="btn" onclick="themvao1()">Thêm Vật Thể</button>
-</div>
-
-<div class="upload-btn-wrapper">
-<button class="btn" onclick="anhhoacvatthe()">Chỉnh Ảnh/Vật thể</button>
-</div>
-
-
-<div class="container">
-  <div class="zoom">
-    <canvas id= "canv1" ></canvas>
-  </div>
-</div>
-     
-     <div class="btn-group" style="position:absolute; bottom:0px;">
-       <!-- <button  id="nut1" class="button1"  onclick="myFunction1()">chinh anh</button>
-        <button  id="nut2" class="button2"  onclick="myFunction2()">chinh vat the</button> -->      
-    </div> 
-   
-    <!-- <button id="nutthem2" class="button button-them2" onclick="themvao2()">them1</button> -->
-    
-   <!-- <button id="nutclose1" class="button button-close1"  onclick="close1()">tat vat the</button>-->
-   
-    
-    <div id="DIV1" class="DIV1e" ><iframe src="./cartoon_interior.html" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" scrolling="no" allowfullscreen allowtransparency="true"></iframe></div>
-    
-    
-    
-<script type="text/javascript" src="./jszoom/zoom-by-ironex.min.js?v=1"></script>
-<script type="text/javascript">
-  zoom();
-</script>
 <script>
-function upload(){
-  var imgcanvas = document.getElementById("canv1");
-  var fileinput = document.getElementById("finput");
-  var image = new SimpleImage(fileinput);
-  image.drawTo(imgcanvas);
+/**
+ * Logic điều khiển AI Render
+ * Author: Antigravity AI
+ */
+async function startAiRender() {
+    const { value: file } = await Swal.fire({
+        title: 'TẢI ẢNH THIẾT KẾ',
+        text: 'Chọn ảnh hiện tại từ máy tính của bạn để AI xử lý',
+        input: 'file',
+        inputAttributes: {
+            'accept': 'image/*',
+            'aria-label': 'Upload image'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Tiếp theo',
+        cancelButtonText: 'Hủy',
+        confirmButtonColor: '#0072ff'
+    });
+
+    if (file) {
+        const { value: prompt } = await Swal.fire({
+            title: 'MÔ TẢ KHÔNG GIAN',
+            input: 'text',
+            inputLabel: 'Mô tả chi tiết phong cách bạn muốn AI Render',
+            inputValue: 'Modern interior design, photorealistic, cinematic lighting',
+            showCancelButton: true,
+            confirmButtonText: 'Bắt đầu Render AI',
+            cancelButtonText: 'Hủy',
+            confirmButtonColor: '#00c6ff'
+        });
+
+        if (prompt) {
+            Swal.fire({
+                title: 'ĐANG XỬ LÝ...',
+                html: 'Hệ thống AI đang Render ảnh 4K.<br>Vui lòng đợi trong giây lát...',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            const formData = new FormData();
+            formData.append('image', file);
+            formData.append('prompt', prompt);
+
+            try {
+                // QUAN TRỌNG: Sau khi deploy lên Render.com, hãy thay localhost bằng URL thật của bạn
+                // Ví dụ: https://3d-render-api.onrender.com/api/render
+                const BACKEND_URL = 'http://localhost:10000/api/render'; 
+                
+                const response = await fetch(BACKEND_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) throw new Error('Không thể kết nối với server Backend.');
+                
+                const data = await response.json();
+
+                if (data.success) {
+                    Swal.fire({
+                        title: 'KẾT QUẢ RENDER AI',
+                        text: 'Bạn có thể tải ảnh này về để sử dụng.',
+                        imageUrl: data.renderUrl,
+                        imageWidth: 800,
+                        imageAlt: 'AI Rendered Result',
+                        confirmButtonText: 'Tải ảnh xuống',
+                        showCloseButton: true,
+                        confirmButtonColor: '#0072ff',
+                        width: '80%'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.open(data.renderUrl, '_blank');
+                        }
+                    });
+                } else {
+                    throw new Error(data.error || 'Render thất bại.');
+                }
+            } catch (error) {
+                Swal.fire('LỖI', 'Đã xảy ra lỗi: ' + error.message, 'error');
+            }
+        }
+    }
 }
 </script>
-    
-    
 
-    <script>
-var top_z = document.getElementById("DIV1").style.zIndex;
-
-function themvao1() {
-  /*document.getElementById("nut1").style.display = "block";*/
-  document.getElementById("DIV1").style.zIndex = ++top_z;
-  document.getElementById("DIV1").style.display = "block";
-    
-  document.getElementById("nutthem1").style.display = "none";
-  document.getElementById("nutthem2").style.display = "block";
-  document.getElementById("nutclose1").style.display = "block";
-}
-/* function myFunction1() { 
-  document.getElementById("DIV1").style.zIndex = ++top_z;
-  document.getElementById("DIV1").style.display = "visible";
-  document.getElementById("nutthem1").style.display = "none";
-  document.getElementById("nutthem2").style.display = "block";
-  
-  document.getElementById("nutclose1").style.display = "block";
-  document.getElementById("nutclose2").style.display = "none";
- 
-}*/
-
-function themvao2() {
-  document.getElementById("nut2").style.display = "block";
-  document.getElementById("DIV2").style.zIndex = ++top_z;
-  document.getElementById("DIV2").style.display = "block";
-  document.getElementById("nutthem2").style.display = "none";
-  document.getElementById("nutthem3").style.display = "block";
-  document.getElementById("nutclose2").style.display = "block";
-}
-
-function myFunction2() {
- 
-  document.getElementById("DIV2").style.zIndex = ++top_z;
-  document.getElementById("DIV2").style.display = "block";
-  document.getElementById("nutthem1").style.display = "none";
-  document.getElementById("nutthem2").style.display = "none";
- 
-  document.getElementById("nutclose1").style.display = "none";
-  document.getElementById("nutclose2").style.display = "block";
-  
-}
-
-
-
-function close1() {
-   /*document.getElementById("DIV1").style.zIndex = --top_z;*/
-  document.getElementById("DIV1").style.display = "none";
-  document.getElementById("nut1").style.display = "none";
-  document.getElementById("nutthem1").style.display = "block";
-  
-  document.getElementById("nutclose1").style.display = "none";
-}
-
-
-
-</script>
-    
-    <script>
-function anhhoacvatthe() {
-   var element = document.getElementById("DIV1");
-   element.classList.toggle("DIV1e1");
-}
-</script>
-    
-</body>
-</html>
+<!-- huongdansudung --></body></html>

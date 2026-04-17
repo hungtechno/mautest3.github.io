@@ -1,0 +1,199 @@
+
+
+/* start anchor menuphu*/
+#menuphu {
+  cursor: pointer;
+  position: absolute;    
+  background-color: #ffa201;
+  border-radius: 5px;
+  color: #000;
+  font-weight: normal;
+   width: 60vw;
+   height: 5px;
+  box-shadow: 0 0 4px 2px #a94c00;
+  display: none;
+   
+}
+#menuphu_child {
+  position: absolute;
+  top: 5px;
+  background-color: #000;
+  background-size: cover;
+  width: 60vw;
+  height: 30px;
+  border-radius: 5px;
+  color: #ffa201;
+  font-weight: bold;
+  box-shadow: 0 0 4px 2px #a94c00;
+  display: visible;
+}
+/* stop anchor menuphu*/
+
+
+body {margin:0;font-family:Arial}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  margin: 0;
+  font-weight: bold;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+      max-width: 400px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+    height: 250px;   /* THEM THANH CUON 150px */
+    overflow: scroll; /* THEM THANH CUON */
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 5px 5px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-weight: bold;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: block;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
+/* start menu card*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 5px;
+    margin-bottom: 5px;
+    
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Responsive columns */
+
+
+
+@media screen and (max-width: 6000px) {
+  .column {
+    width: 50%;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+@media screen and (max-width: 300px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  text-align: center;
+  background-color: #3e8e41;
+    border-style: groove;
+    border-width: 7px;
+    border-color: coral;
+  
+}

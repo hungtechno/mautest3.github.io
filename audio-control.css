@@ -1,0 +1,44 @@
+/* Specifies the size of the audio container */
+audio {
+  width: 250px;
+  height: 40px;
+  position: absolute;
+  top:0px;
+  display:block;  
+}
+
+/* Audio the color */
+audio::-webkit-media-controls-panel {
+     background-color: #1a8cff;
+     color: #000;
+     }
+
+/* Removes the timeline */
+audio::-webkit-media-controls-timeline {
+  display: visible !important;
+}
+
+/* Removes the time stamp */
+audio::-webkit-media-controls-current-time-display {
+  display: visible;
+}
+audio::-webkit-media-controls-time-remaining-display {
+  display: none;
+}
+
+audio::-webkit-media-controlsList {
+  display: none;
+}
+
+.sidebar {
+  height: 40px;
+  width: 90vw;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  background-color: transparent;
+  overflow-x: hidden;
+  padding-top: 0px;
+  
+}
